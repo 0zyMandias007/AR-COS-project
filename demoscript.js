@@ -55,3 +55,12 @@ window.onload = () => {
     );
     
 };
+
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(function(stream) {
+    // Camera access granted, proceed with your augmented reality logic
+  })
+  .catch(function(error) {
+    // Handle errors or user denial of camera access permission
+    console.error('Could not access the camera:', error);
+  });
