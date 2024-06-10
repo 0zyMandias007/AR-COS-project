@@ -11,6 +11,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
@@ -33,7 +34,7 @@
 
         <!-- Example of a geolocation-based entity with a 3D model -->
         <a-assets>
-            <a-asset-item id="3d-model1" src="C:\Users\edmun\OneDrive\Documents\AR BlendeR"></a-asset-item>
+            <a-asset-item id="3d-model1" src="models\ramen demo1.glb"></a-asset-item>
         </a-assets>
         <a-entity gps-entity-place="latitude: 6.6731399; longitude: -1.5674749;"
                   gltf-model="#3d-model1"
