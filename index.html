@@ -32,8 +32,11 @@
         <a-camera gps-camera="minDistance: 40;" rotation-reader></a-camera>
 
         <!-- Example of a geolocation-based entity with a 3D model -->
+        <a-assets>
+            <a-asset-item id="3d-model1" src="C:\Users\edmun\OneDrive\Documents\AR BlendeR"></a-asset-item>
+        </a-assets>
         <a-entity gps-entity-place="latitude: 6.6731399; longitude: -1.5674749;"
-                  gltf-model="C:\Users\edmun\OneDrive\Documents\AR BlendeR"
+                  gltf-model="#3d-model1"
                   scale="1 1 1">
         </a-entity>
 
