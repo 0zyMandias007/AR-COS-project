@@ -4,6 +4,9 @@ function loadPlaces(position) {
         radius: 300, // in meters
     };
 
+    // CORS Proxy to avoid CORS problems
+    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+
     // Using a general search query to find all types of places
     const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/.json
         ?proximity=${position.longitude},${position.latitude}
@@ -28,9 +31,12 @@ window.onload = () => {
         // than use it to load from remote APIs some places nearby
         loadPlaces(position.coords)
             .then((places) => {
+                if (!places || !Array.isArray(places)) {
+                    throw new Error('No places found or places is not an array');
+                }
                 places.forEach((place) => {
-                    const latitude = place.location.lat;
-                    const longitude = place.location.lng;
+                    const latitude = place.geometry.coordinates[1];
+                    const longitude = place.geometry.coordinates[0];
 
                     // add place name
                     const placeText = document.createElement('a-link');
